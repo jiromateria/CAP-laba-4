@@ -20,10 +20,12 @@ try:
             value = int( value )
         
         except:
-            if isinstance( value, str ):
-                print("Value has to be a number, not a srting ")
-            else:
+            try:
+                value = float(value)
                 print("Value has to be int type ")
+
+            except:
+                print("Value has to be a number, not a srting ")
             error_flag = True
         
         if not(error_flag):
